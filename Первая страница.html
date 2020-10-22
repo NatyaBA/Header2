@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 70%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.slideshow-container {
+  width: 100%;
+  height:100vh;
+  position: relative;
+  margin: auto;
+}
+
+.text1, .text2, .text3 {
+  color: #f2f2f2;
+  font-size: 70px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  top: 30%;
+  left: 30%;
+}
+
+.text4 {
+  color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 15%;
+  top: 48%;
+  left: 30%;
+  height: 33px;
+}
+
+.text5 {
+    color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 10%;
+  top: 55%;
+  left: 30%;
+  height: 33px;
+}
+.text6 {
+  color: #080404;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 10%;
+  top: 55%;
+  left: 30%;
+  height: 33px;
+}
+
+
+</style>
+<body>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="1.jpg" style="width:2000px", style="margin: 0", style="height: 100vh">
+          <div class="text1">What Marketers Need to know to <br> <strong>GET IN ON GAMING</strong></div>
+          <a class="text4" style="border: 2px solid rgb(32, 83, 83)">READ THE ARTICLE</a>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="2.jpg" style="width:2000px", style="margin: 0",style="height: 100vh">
+          <div class="text1">Cannes Lions International Festival of <br > creativity <br> <strong>#4 NETWORK OF THE DECADE</strong></div>
+          <a class="text5" style="border: 2px solid rgb(155, 167, 160)">READ MORE</a>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="3.jpg" style="width:2000px", style="margin: 0", style="height: 100vh">
+          <div class="text3" style="color:black">First-of-Its-Kind Global Industry <br> Recognition with <br> <strong>100 CERTIFIED CX PROS</strong> </div>
+          <a class="text6" style="border: 2px solid rgb(60, 87, 138)", style="color:black">READ MORE</a>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+</body>
+</html>
